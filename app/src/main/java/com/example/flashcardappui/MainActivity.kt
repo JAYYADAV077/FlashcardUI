@@ -60,97 +60,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FlashCardAppUITheme {
+            MainScreen()
 
-                Ui()
             }
         }
     }
 }
 
-@Composable
-fun Ui(modifier: Modifier = Modifier) {
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(15.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Spacer(modifier = Modifier.height(30.dp))
-        Text(
-            "Flashcards",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.SemiBold
-        )
-
-        Spacer(modifier = Modifier.height(40.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Start
-        ) {
-            Text(
-                "Deck: History",
-                fontSize = 22.sp,
-                fontWeight = FontWeight.SemiBold
-            )
-        }
-        Spacer(modifier = Modifier.height(30.dp))
-        Box(
-            modifier = Modifier
-                .width(2000.dp)
-                .height(200.dp)
-                .clip(RoundedCornerShape(16.dp)),
-            contentAlignment = Alignment.Center
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.download), // your image in res/drawable
-                contentDescription = "My Image",
-                modifier = Modifier.fillMaxSize(), // image size
-                contentScale = ContentScale.Crop
-            )
-        }
-        Spacer(modifier = Modifier.height(20.dp))
-        Text(
-            "What event marked as the end of cold" +
-                    " war ?",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.SemiBold
-        )
-        Spacer(modifier = Modifier.height(15.dp))
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth(),
-            contentAlignment = Alignment.CenterStart // 👈 Aligns to left
-        ) {
-
-            Text(
-                "Tap to reveal the answer",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Normal,
-                color = Color.Gray,
-
-                )
-        }
-
-
-        Spacer(modifier = Modifier.height(40.dp))
-
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Button({},) {
-                Text("Previous")
-            }
-            Button(
-                {},
-            ) {
-                Text("Next")
-            }
-        }
-
-    }
-
-}
